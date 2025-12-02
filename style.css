@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 20px;
+}
+
+#ui {
+  width: 420px;
+}
+
+canvas {
+  border: 1px solid #aaa;
+  background: white;
+}
