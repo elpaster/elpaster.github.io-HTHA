@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sketch to 3D World</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <title>Draw to Protect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-  <body>
-    <div id="ui">
-      <h2>Sketch → 3D World Generator</h2>
+<body>
+  <div id="menu">
+    <h1>Eggscapade</h1>
+    <h3>Select a level</h3>
+    <div id="categoriesContainer"></div>
+  </div>
 
-      <canvas id="sketchCanvas" width="400" height="400"></canvas>
+  <div id="gameUI" class="hidden">
+    <button id="backBtn">⬅ Back</button>
+    <span id="levelDisplay"></span>
+    <button id="restartBtn">↻ Restart</button>
+  </div>
 
-      <div>
-        <button id="clearBtn">Clear</button>
-        <button id="generateBtn">Generate 3D World</button>
-      </div>
-    </div>
+  <!-- Shape Palette - ADD THIS -->
+  <div id="shapePalette" class="hidden"></div>
 
-    <!-- Container where A-Frame scene will be injected -->
-    <div id="sceneContainer"></div>
+  <canvas id="gameCanvas" width="800" height="500" class="hidden"></canvas>
 
-    <script src="sketch.js"></script>
-    <script src="converter.js"></script>
-    <script src="world.js"></script>
-  </body>
+  <script src="levels.js"></script>
+  <script src="ui.js"></script>
+  <script src="game.js"></script>
+</body>
 </html>
