@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sketch to 3D World</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="ui">
+      <h2>Sketch → 3D World Generator</h2>
+
+      <canvas id="sketchCanvas" width="400" height="400"></canvas>
+
+      <div>
+        <button id="clearBtn">Clear</button>
+        <button id="generateBtn">Generate 3D World</button>
+      </div>
+    </div>
+
+    <!-- Container where A-Frame scene will be injected -->
+    <div id="sceneContainer"></div>
+
+    <script src="sketch.js"></script>
+    <script src="converter.js"></script>
+    <script src="world.js"></script>
+  </body>
+</html>
