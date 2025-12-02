@@ -1,3 +1,5 @@
+console.log("Loaded:", document.currentScript.src);
+
 document.getElementById("generateBtn").onclick = () => {
   const objs = convertStrokesToObjects(strokes);
   renderWorld(objs);

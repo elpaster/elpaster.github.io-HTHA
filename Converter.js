@@ -1,3 +1,5 @@
+console.log("Loaded:", document.currentScript.src);
+
 function strokeToBounds(stroke) {
   const xs = stroke.map(p => p.x);
   const ys = stroke.map(p => p.y);

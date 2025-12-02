@@ -1,3 +1,5 @@
+console.log("Loaded:", document.currentScript.src);
+
 const canvas = document.getElementById("sketchCanvas");
 const ctx = canvas.getContext("2d");
 
