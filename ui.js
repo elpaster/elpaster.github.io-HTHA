@@ -1,5 +1,19 @@
 window.onload = () => {
+    buildMenu();
+  
+    // Setup buttons
+    document.getElementById("backBtn").onclick = () => {
+      goToMenu();
+    };
+    
+    document.getElementById("restartBtn").onclick = () => {
+      restartLevel();
+    };
+  };
+
+  function buildMenu() {
     const container = document.getElementById("categoriesContainer");
+    container.innerHTML = ""; // clear old menu
   
     LEVELS.forEach(categoryObj => {
       const catDiv = document.createElement("div");
@@ -15,20 +29,24 @@ window.onload = () => {
       categoryObj.levels.forEach(level => {
         const btn = document.createElement("button");
         btn.innerText = "Level " + level.id + ": " + level.name;
-        btn.onclick = () => startLevel(level);
+  
+        // 🔒 Lock logic
+        if (level.id > highestUnlockedLevel) {
+          btn.disabled = true;
+         btn.style.opacity = "0.5";
+        }
+  
+        btn.onclick = () => {
+          if (btn.disabled) return; // safety
+          startLevel(level);
+        };
+  
         levelContainer.appendChild(btn);
       });
   
       catDiv.appendChild(levelContainer);
       container.appendChild(catDiv);
     });
+  }
   
-    // Setup buttons
-    document.getElementById("backBtn").onclick = () => {
-      goToMenu();
-    };
-    
-    document.getElementById("restartBtn").onclick = () => {
-      restartLevel();
-    };
-};
+  
